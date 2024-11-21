@@ -1,6 +1,7 @@
+#ifndef AUTOBUZ_H
+#define AUTOBUZ_H
+
 #include <iostream>
-#include <cstring>
-using namespace std;
 
 class Autobuz
 {
@@ -31,3 +32,4 @@ public:
     const char *getProducator() const;
     void setProducator(const char *prod);
 };
+#endif
