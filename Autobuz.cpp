@@ -86,3 +86,37 @@ bool Autobuz::operator>(const Autobuz &other) const
 {
     return this->capacitate > other.capacitate;
 }
+
+
+//getteri si setteri cu validari
+int Autobuz::getCapacitate() const
+{
+    return capacitate;
+}
+
+void Autobuz::setCapacitate(int capacitate)
+{
+    if (capacitate < 0)
+    {
+        throw invalid_argument("Capacitatea nu poate fi negativa.");
+    }
+    this->capacitate = capacitate;
+}
+
+const char *Autobuz::getProducator() const
+{
+    return producator;
+}
+
+void Autobuz::setProducator(const char *prod)
+{
+    delete[] producator;
+    producator = new char[strlen(prod) + 1];
+    strcpy(producator, prod);
+}
+
+
+int Autobuz::getNumarLocuriLibere() const
+{
+    return capacitate - nrPersoaneImbarcate;
+}
