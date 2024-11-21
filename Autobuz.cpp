@@ -10,3 +10,23 @@ Autobuz::Autobuz()
     producator = new char[8];
     strcpy(producator, "Necunoscut");
 }
+
+// COcstructorul cu parametrii
+Autobuz::Autobuz(int capacitate, int nrPersoane, const char *prod)
+    : idAutobuz(++nrAutobuze)
+{
+    // valdiare pe input
+    if (capacitate < 0)
+    {
+        throw invalid_argument("Capacitatea nu poate fi negativa");
+    }
+    if (nrPersoane < 0 || nrPersoane > capacitate)
+    {
+        throw invalid_argument("Numarul de persoane imbarcate nu este valid");
+    }
+    this->capacitate = capacitate;
+    this->nrPersoaneImbarcate = nrPersoane;
+
+    producator = new char[strlen(prod) + 1];
+    strcpy(producator, prod);
+}
