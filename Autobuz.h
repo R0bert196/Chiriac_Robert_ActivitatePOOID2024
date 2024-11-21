@@ -22,4 +22,12 @@ public:
 
     operator int() const;                       // Operator cast la int
     bool operator>(const Autobuz &other) const; // Operator>
+
+    int getNumarLocuriLibere() const; // Metoda care calculeaza locurile libere
+
+    // Getters si Setters pt fieldurile private
+    int getCapacitate() const;
+    void setCapacitate(int capacitate);
+    const char *getProducator() const;
+    void setProducator(const char *prod);
 };
