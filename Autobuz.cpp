@@ -4,6 +4,9 @@
 
 using namespace std;
 
+
+int Autobuz::nrAutobuze = 0;
+
 Autobuz::Autobuz()
     : idAutobuz(++nrAutobuze), capacitate(0), nrPersoaneImbarcate(0), producator(nullptr)
 {
@@ -48,11 +51,11 @@ Autobuz::~Autobuz()
     delete[] producator;
 }
 
-//overlaod operator=
+// overlaod operator=
 Autobuz &Autobuz::operator=(const Autobuz &other)
 {
     if (this != &other)
-    {                        
+    {
         delete[] producator; // eliberez memoria veche
 
         // copiez valorilor din celalalt obiect
@@ -66,7 +69,7 @@ Autobuz &Autobuz::operator=(const Autobuz &other)
     return *this;
 }
 
-//cast la int operator
+// cast la int operator
 Autobuz::operator int() const
 {
     return nrPersoaneImbarcate;
@@ -87,8 +90,7 @@ bool Autobuz::operator>(const Autobuz &other) const
     return this->capacitate > other.capacitate;
 }
 
-
-//getteri si setteri cu validari
+// getteri si setteri cu validari
 int Autobuz::getCapacitate() const
 {
     return capacitate;
@@ -114,7 +116,6 @@ void Autobuz::setProducator(const char *prod)
     producator = new char[strlen(prod) + 1];
     strcpy(producator, prod);
 }
-
 
 int Autobuz::getNumarLocuriLibere() const
 {
