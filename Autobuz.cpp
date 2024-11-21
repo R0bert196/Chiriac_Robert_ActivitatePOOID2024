@@ -65,3 +65,9 @@ Autobuz &Autobuz::operator=(const Autobuz &other)
     }
     return *this;
 }
+
+//cast la int operator
+Autobuz::operator int() const
+{
+    return nrPersoaneImbarcate;
+}
