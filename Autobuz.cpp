@@ -71,3 +71,12 @@ Autobuz::operator int() const
 {
     return nrPersoaneImbarcate;
 }
+
+// <<operator overload
+ostream &operator<<(ostream &out, const Autobuz &autobuz)
+{
+    out << "ID: " << autobuz.idAutobuz << "; Capacitate: " << autobuz.capacitate
+        << "; Imbarcati: " << autobuz.nrPersoaneImbarcate
+        << "; Producator: " << autobuz.producator << ";\n";
+    return out;
+}
