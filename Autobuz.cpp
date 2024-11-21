@@ -47,3 +47,21 @@ Autobuz::~Autobuz()
     // delete la producator sa eliberam memoria
     delete[] producator;
 }
+
+//overlaod operator=
+Autobuz &Autobuz::operator=(const Autobuz &other)
+{
+    if (this != &other)
+    {                        
+        delete[] producator; // eliberez memoria veche
+
+        // copiez valorilor din celalalt obiect
+        capacitate = other.capacitate;
+        nrPersoaneImbarcate = other.nrPersoaneImbarcate;
+
+        // aloc memoria si copiez producatorul
+        producator = new char[strlen(other.producator) + 1];
+        strcpy(producator, other.producator);
+    }
+    return *this;
+}
