@@ -30,3 +30,13 @@ Autobuz::Autobuz(int capacitate, int nrPersoane, const char *prod)
     producator = new char[strlen(prod) + 1];
     strcpy(producator, prod);
 }
+
+// Copy construct
+Autobuz::Autobuz(const Autobuz &other)
+    : idAutobuz(++nrAutobuze)
+{
+    capacitate = other.capacitate;
+    nrPersoaneImbarcate = other.nrPersoaneImbarcate;
+    producator = new char[strlen(other.producator) + 1];
+    strcpy(producator, other.producator);
+}
