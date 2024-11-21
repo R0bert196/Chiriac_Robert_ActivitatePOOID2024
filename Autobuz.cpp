@@ -40,3 +40,10 @@ Autobuz::Autobuz(const Autobuz &other)
     producator = new char[strlen(other.producator) + 1];
     strcpy(producator, other.producator);
 }
+
+// Destructor
+Autobuz::~Autobuz()
+{
+    // delete la producator sa eliberam memoria
+    delete[] producator;
+}
