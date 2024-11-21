@@ -80,3 +80,9 @@ ostream &operator<<(ostream &out, const Autobuz &autobuz)
         << "; Producator: " << autobuz.producator << ";\n";
     return out;
 }
+
+//>operator overlaod
+bool Autobuz::operator>(const Autobuz &other) const
+{
+    return this->capacitate > other.capacitate;
+}
